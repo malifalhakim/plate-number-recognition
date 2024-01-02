@@ -1,0 +1,47 @@
+# Byte-compiled / optimized / DLL files
+Text-Recognition/PaddleOCR/__pycache__/
+Text-Recognition/PaddleOCR/.ipynb_checkpoints/
+Text-Recognition/PaddleOCR/*.py[cod]
+Text-Recognition/PaddleOCR/*$py.class
+
+# C extensions
+Text-Recognition/PaddleOCR/*.so
+
+Text-Recognition/PaddleOCR/inference/
+Text-Recognition/PaddleOCR/inference_results/
+Text-Recognition/PaddleOCR/output/
+Text-Recognition/PaddleOCR/train_data/
+Text-Recognition/PaddleOCR/log/
+Text-Recognition/PaddleOCR/*.DS_Store
+Text-Recognition/PaddleOCR/*.vs
+Text-Recognition/PaddleOCR/*.user
+Text-Recognition/PaddleOCR/*~
+Text-Recognition/PaddleOCR/*.vscode
+Text-Recognition/PaddleOCR/*.idea
+
+Text-Recognition/PaddleOCR/*.log
+Text-Recognition/PaddleOCR/.clang-format
+Text-Recognition/PaddleOCR/.clang_format.hook
+
+Text-Recognition/PaddleOCR/build/
+Text-Recognition/PaddleOCR/dist/
+Text-Recognition/PaddleOCR/paddleocr.egg-info/
+Text-Recognition/PaddleOCR/deploy/android_demo/app/OpenCV/
+Text-Recognition/PaddleOCR/deploy/android_demo/app/PaddleLite/
+Text-Recognition/PaddleOCR/deploy/android_demo/app/.cxx/
+Text-Recognition/PaddleOCR/deploy/android_demo/app/cache/
+Text-Recognition/PaddleOCR/test_tipc/web/models/
+Text-Recognition/PaddleOCR/test_tipc/web/node_modules/
+
+# folder
+ESRGAN/ESRGAN/.vscode
+
+# file type
+ESRGAN/ESRGAN/*.svg
+ESRGAN/ESRGAN/*.pyc
+ESRGAN/ESRGAN/*.pth
+ESRGAN/ESRGAN/*.t7
+ESRGAN/ESRGAN/*.caffemodel
+ESRGAN/ESRGAN/*.mat
+ESRGAN/ESRGAN/*.npy
+
