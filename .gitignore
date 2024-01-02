@@ -9,7 +9,6 @@ Text-Recognition/PaddleOCR/*.so
 
 Text-Recognition/PaddleOCR/inference/
 Text-Recognition/PaddleOCR/inference_results/
-Text-Recognition/PaddleOCR/output/
 Text-Recognition/PaddleOCR/train_data/
 Text-Recognition/PaddleOCR/log/
 Text-Recognition/PaddleOCR/*.DS_Store
