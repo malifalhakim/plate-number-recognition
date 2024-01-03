@@ -1,17 +1,20 @@
+from PIL import Image
+import random
+import glob
+# Can use any of the following augmentations:
 from straug.warp import Curve,Stretch,Distort
 from straug.geometry import Shrink,Perspective,Rotate
 from straug.process import Solarize,Equalize,Invert,Sharpness,AutoContrast,Posterize
 from straug.noise import GaussianNoise,SpeckleNoise,ImpulseNoise,ShotNoise
 from straug.camera import Brightness,Pixelate,Contrast
-from PIL import Image
-import random
-import cv2
 
-train_number = 1
+no = 1
+# Get a list of all png and jpg files in the directory
+png_files = glob.glob('train/images/*.png') + glob.glob('train/images/*.jpg')
+print(png_files)
 
-while train_number <= 640:
-    PATH_DIR = f'D:\Pemrograman\Data Science\SatriaData\Image Processing\\train_result\DataTrain{train_number}_rlt.png'
-    img = Image.open(PATH_DIR)
+for file in png_files:
+    img = Image.open(file)
 
     rand = random.randint(1,8)
     
@@ -28,7 +31,9 @@ while train_number <= 640:
         img = Contrast()(img,mag=3)
         print("Contr")
     
-    img.save(f'augmentation_result\DataTrain{1440+ train_number}_rlt.png')
-    train_number += 1
+    # Save the image with a new name in a different directory
+    new_file_name = f'augmentation_result\DataTrain{no}.png'
+    img.save(new_file_name)
+    no += 1
 
 

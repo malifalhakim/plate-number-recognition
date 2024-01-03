@@ -6,28 +6,28 @@ from straug.geometry import Shrink,Perspective,Rotate
 from straug.camera import Contrast,Pixelate
 
 # Load Image Train Path
-train_image_path = Path("D:\Pemrograman\Data Science\SatriaData\Data Train ESRGAN")
+train_image_path = "train/images"
 train_image_path = list(train_image_path.glob("*.png"))
 train_image_path = sorted(train_image_path, key=lambda path: int(path.stem.split("_")[0].split("DataTrain")[-1]))
 train_image_path = list(map(str, train_image_path))
 train_images = train_image_path
 
 # Load Image Test Path
-test_image_path = Path("D:\Pemrograman\Data Science\SatriaData\Data Test ESRGAN")
+test_image_path = "test/images"
 test_image_path = list(test_image_path.glob("*.png"))
 test_image_path = sorted(test_image_path, key=lambda path: int(path.stem.split("_")[0].split("DataTest")[-1]))
 test_image_path = list(map(str, test_image_path))
 test_images = test_image_path
 
 # Load Image Train Label Path
-train_label_path = Path("D:\Pemrograman\Data Science\SatriaData\Image Processing\\train\labels")
+train_label_path = "train/labels"
 train_label_path = list(train_label_path.glob("*.txt"))
 train_label_path = sorted(train_label_path,key=lambda path: int(path.stem.split("_")[0].split("DataTrain")[-1]))
 train_label_path = list(map(str,train_label_path))
 train_label = train_label_path
 
 # Load Image Test Label Path
-test_label_path = Path("D:\Pemrograman\Data Science\SatriaData\Image Processing\\test\labels")
+test_label_path = "test/labels"
 test_label_path = list(test_label_path.glob("*.txt"))
 test_label_path = sorted(test_label_path,key=lambda path: int(path.stem.split("_")[0].split("DataTest")[-1]))
 test_label_path = list(map(str,test_label_path))
@@ -76,31 +76,15 @@ def bird_view(image_path,points):
 
     return img_output
 
-
-# For checking
-
-'''
-points = read_label(test_images[0],test_label[0])
-print(points)
-cropped_image = bird_view(test_images[0],points)
-cv2.imshow('a',cropped_image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-'''
-
 # Produce bird view for train
-'''
 for i in range(len(train_images)):
-    points = read_label(train_images[i],train_label[i])
-    bird_image = bird_view(train_images[i],points)
-    cv2.imwrite(f"D:\Pemrograman\Data Science\SatriaData\Image Processing\\train_result\DataTrain{i+1}_rlt.png",bird_image)
-    print(f"Gambar-{i+1} Berhasil DiProses")
-'''
-
+    points = read_label(train_images[i], train_label[i])
+    bird_image = bird_view(train_images[i], points)
+    cv2.imwrite(f"\\train_result\DataTrain{i+1}.png", bird_image)
+    
 # Produce bird view for test
 for i in range(len(test_images)):
-    if i == 75:
-        points = read_label(test_images[i],test_label[i])
-        bird_image = bird_view(test_images[i],points)
-        cv2.imwrite(f"D:\Pemrograman\Data Science\SatriaData\Image Processing\\test_result\DataTest{i+1}_rlt.png",bird_image)
-        print(f"Gambar-{i+1} berhasil diproses")
+    points = read_label(test_images[i],test_label[i])
+    bird_image = bird_view(test_images[i],points)
+    cv2.imwrite(f"\\test_result\DataTest{i+1}.png",bird_image)
+    print(f"Gambar-{i+1} berhasil diproses")
